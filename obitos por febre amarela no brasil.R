@@ -1,5 +1,3 @@
-library(ggplot2)
-
 subset_df <- data.frame(
   uf_lpi = c("TO", "SP", "RS", "SC", "PR", "RO", "RJ", "PA", "MT", "MS", "MG", "GO", "ES", "DF", "BA", "AM", "AC"),
   obitos = c(10, 248, 9, 7, 2, 2, 105, 37, 17, 5, 375, 51, 81, 8, 3, 19, 1)
@@ -41,15 +39,12 @@ ggplot(subset_df, aes(x = "", y = obitos, fill = uf_lpi)) +
   theme_void()
 
 
-
-library(ggplot2)
-
+#grafico pizza final
 subset_df <- data.frame(
   uf_lpi = c("TO", "SP", "RS", "SC", "PR", "RO", "RJ", "PA", "MT", "MS", "MG", "GO", "ES", "DF", "BA", "AM", "AC"),
   obitos = c(10, 248, 9, 7, 2, 2, 105, 37, 17, 5, 375, 51, 81, 8, 3, 19, 1)
 )
 
-# Criar uma nova variável combinando uf_lpi e obitos
 subset_df$uf_obitos <- paste(subset_df$uf_lpi, " (", subset_df$obitos, ")")
 
 ggplot(subset_df, aes(x = "", y = obitos, fill = uf_obitos)) +
